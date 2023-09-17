@@ -1,0 +1,236 @@
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    --main-bg-color-1: black;
+    --main-bg-color-2: white;
+    --main-bg-color-3:  #69b849;
+    --main-bg-color-4: #5F5F63;
+    font-family: 'Inter', sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    box-sizing: border-box;
+    background: linear-gradient(var(--main-bg-color-3), var(--main-bg-color-2));
+    background-size: cover; 
+    background-repeat: no-repeat;
+    font-size: 18px;
+    box-sizing: border-box;
+} 
+
+/* Header  */
+
+.Header{
+    grid-area: header;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.Header__Logo{
+    color: var(--main-bg-color-4);
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+.Header__Shortcuts{
+    color: var(--main-bg-color-4);
+    grid-column-start: 4;   
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.Header__bottons{
+    list-style: none;
+}
+.Header__Botton_Active{
+    text-decoration:underline;
+    color: var(--main-bg-color-4);
+}
+.Header__Botton{
+    text-decoration: none;
+    color: var(--main-bg-color-2);
+}
+.Header__Botton:hover{
+    text-decoration: underline;
+}
+#side-menu {
+    display: none;
+}
+.Header__Menu{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+}
+
+/* Main */
+
+
+
+/* Footer */
+
+.Footer{
+    display: flex;
+    height: 200px;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--main-bg-color-4);
+}
+.Footer__Box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 200px;
+}
+.Footer__Email{
+    text-decoration: none;
+    color: var(--main-bg-color-4);
+}
+.Footer__Icons{
+    list-style: none;    
+}
+.Footer__Icons a{
+    text-decoration: none;
+    color:var(--main-bg-color-2) ;
+    background-color: var(--main-bg-color-4);
+    border-radius: 100%;
+    padding: 4px;
+    margin-right: 5px;
+}
+.Footer__Shortcuts{
+    text-decoration: none;
+    color: var(--main-bg-color-4);
+}
+
+/* Medias Querys */
+@media (max-width: 1300px) {
+    
+    /* Header */
+
+    .Header{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .Header__Shortcuts{
+        grid-column-start: 3;
+    }
+
+    /* Main */
+
+    .Main{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 500px;
+    }
+    .Main__Title{
+        font-size: 50px;
+        font-weight: 800;
+    }
+    .Main__Text{
+        font-size: 25px;
+        font-weight: 800;
+    }
+    .Main__Image{
+        width: 450px;
+        height: 340px;
+    }
+
+    /* Footer */
+
+    .Footer{
+        display: flex;
+        height: 200px;
+        justify-content: space-around;
+    }
+}
+@media (max-width: 800px){
+    
+    /* Header */
+    
+    .Header{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+    }
+    .Header__Shortcuts {
+        position: absolute;
+        top: 70px;
+        left: 100%;
+        background-color: var(--main-bg-color-3);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 50%;
+        height: 100%;
+        cursor: pointer;
+        transition: all;
+        transition: .3s all ease-in;
+    }
+    .Header__Menu{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2em;
+        cursor: pointer;
+    }
+    #side-menu:checked ~ .Header__Shortcuts{
+        left: 0;
+    }
+
+    /* Main */
+
+    .Main{
+        display: flex;
+        justify-content: center;
+    }
+    .Main__Image{
+        height: 300px;
+        width: 340px;
+    }
+    .Main__Title{
+        font-size: 40px;
+    }
+    .Main__Text{
+        font-size: 20px;
+    }
+
+    /* Footer */
+
+    .Footer{
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+    }
+}
+@media (max-width: 500px){
+
+    /* Main */
+    .Main{
+        display: flex;
+        justify-content: center;
+        height: 400px;
+    }
+    .Main__Image{
+        height: 160px;
+        width: 200px;
+    }
+
+    .Main__Title{
+        font-size: 30px;
+    }
+    .Main__Text{
+        font-size: 15px;
+    }
+
+    /* Footer */
+    .Footer{
+        font-size: 12px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
