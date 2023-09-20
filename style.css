@@ -67,8 +67,72 @@ body{
 }
 
 /* Main */
+.Main{
+    margin: 20px;
+    height: auto;
+    gap: 10px;
+}
+.Main__Section--Primary{
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-bottom: 30px;
+}
+.Main__Article--Primary{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.Main__Image--Primary{
+    height: 100%;
+    padding: 10px;
+    border-radius: 50%;
+}
+.Main__Image--Primary:hover {
+    transform: scale(0.8);
+    transition: transform 0.5s ease; 
+    cursor: pointer;
+}
+.Main__Text--Primary{
+    width: 50%;
+    font-size: 20px;
+    text-align: justify;
+}
 
-
+/* .Main__Article{
+    grid-column: 1/1;
+    grid-auto-flow: row;
+    border: 2px solid black;
+    border-radius: 20px;
+} */
+.Main__Section{
+    display: grid;
+    grid-auto-flow:row ;
+    width: auto;
+    grid-template-columns: repeat(5, 1fr); /* Define el tamaño de las columnas */
+    grid-auto-rows: auto;
+    grid-gap: 10px; /* Ajusta el espacio entre los elementos según tus necesidades */
+}
+.Main__Article{
+    border: solid 2px black;
+    border-radius: 20px;
+}
+.Main__Image{
+    width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+}
+.Main__Image:hover {
+    transform: scale(0.8);
+    transition: transform 0.5s ease; 
+    cursor: pointer;
+}
+.Main__Text{
+    font-size: 15px;
+    margin: 10px;
+    text-align: justify;
+}
 
 /* Footer */
 
@@ -113,31 +177,18 @@ body{
     .Header{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-    }
+        justify-content: space-evenly;
+        width: 100%;
+}
     .Header__Shortcuts{
         grid-column-start: 3;
     }
 
     /* Main */
-
-    .Main{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 500px;
+    .Main__Section{
+        grid-template-columns: repeat(4, 1fr);
     }
-    .Main__Title{
-        font-size: 50px;
-        font-weight: 800;
-    }
-    .Main__Text{
-        font-size: 25px;
-        font-weight: 800;
-    }
-    .Main__Image{
-        width: 450px;
-        height: 340px;
-    }
+    
 
     /* Footer */
 
@@ -147,13 +198,42 @@ body{
         justify-content: space-around;
     }
 }
+@media (max-width: 1000px) {
+    .Header{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 70px;
+    }
+    .Header__Shortcuts {
+        grid-column: 2/3;
+        justify-content: space-evenly;
+    }
+
+    .Main__Text--Primary{
+        font-size: 18px;
+    }
+    .Main__Section{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .Main__Text{
+        font-size: 16px;
+    }
+    .Main__Image--Primary{
+        height: 80%;
+    }
+    .Main__Text{
+        font-size: 12px;
+    }
+    
+
+}
 @media (max-width: 800px){
     
     /* Header */
     
     .Header{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         justify-content: center;
     }
     .Header__Shortcuts {
@@ -164,7 +244,7 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        width: 50%;
+        width: 100%;
         height: 100%;
         cursor: pointer;
         transition: all;
@@ -183,50 +263,52 @@ body{
     }
 
     /* Main */
+    .Main__Section{
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-    .Main{
-        display: flex;
-        justify-content: center;
+    .Main__Article--Primary{
+        grid-column: 1/3;
     }
-    .Main__Image{
-        height: 300px;
-        width: 340px;
+    .Main__Image--Primary{
+        height: 70%;
     }
-    .Main__Title{
-        font-size: 40px;
+    .Main__Text--Primary{
+        font-size: 16px;
     }
     .Main__Text{
-        font-size: 20px;
+        font-size: 14px;
     }
-
+    .Main__Section{
+        width: 100%;
+    }
     /* Footer */
 
     .Footer{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         font-size: 15px;
     }
 }
-@media (max-width: 500px){
+@media (max-width: 600px){
 
     /* Main */
-    .Main{
-        display: flex;
-        justify-content: center;
+    .Main__Article--Primary{
         height: 400px;
+        display: flex;
+        flex-direction: column;
     }
-    .Main__Image{
-        height: 160px;
-        width: 200px;
+    .Main__Image--Primary{
+        width: 60%;
     }
-
-    .Main__Title{
-        font-size: 30px;
+    .Main__Text--Primary{
+        width: 90%;
+        font-size: 12px;
     }
-    .Main__Text{
-        font-size: 15px;
+    .Main__Section{
+        grid-template-columns: 1fr;
+        justify-content: center;
     }
-
     /* Footer */
     .Footer{
         font-size: 12px;
